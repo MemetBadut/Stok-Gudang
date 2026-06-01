@@ -12,6 +12,45 @@
   --warning: #f59e0b;
   --danger: #ef4444;
   --shadow-sm: 0 2px 10px rgba(10, 36, 99, 0.06);
+
+  /* Backgrounds */
+  --bg-page: #f4f7fc;
+  --bg-card: #ffffff;
+  --line: #e6edf6;
+
+  /* Text */
+  --text: #10224f;
+  --muted: #6f7fa2;
+
+  /* Brand blues */
+  --primary: #1f75ff;
+  --primary-2: #195fda;
+  --blue: #2563eb;
+  --blue2: #3b82f6;
+  --teal: #0ea5e9;
+
+  /* Status */
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+
+  /* Sidebar */
+  --sidebar-start: #041f5b;
+  --sidebar-end: #031642;
+  --sidebar-w: 300px;
+
+  /* Layout */
+  --header-h: 72px;
+  --card: #ffffff;
+  --card-border: #e6edf6;
+  --bg: #f4f7fc;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 10px rgba(10, 36, 99, 0.06);
+  --shadow-md: 0 8px 24px rgba(10, 36, 99, 0.1);
 }
 
 * {
