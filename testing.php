@@ -18,7 +18,6 @@ $initialData = [
 ];
 
 $navItems = [
-    ['label' => 'Dashboard', 'icon' => 'ri-dashboard-line'],
     ['label' => 'Stok Barang', 'icon' => 'ri-box-3-line', 'active' => true],
     ['label' => 'Kategori', 'icon' => 'ri-apps-2-line'],
     ['label' => 'Supplier', 'icon' => 'ri-truck-line'],
