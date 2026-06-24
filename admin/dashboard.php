@@ -1,3 +1,11 @@
+<?php
+require_once __DIR__ . '/../auth/session.php';
+
+requireRole(['admin']);
+
+$user = authUser();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
