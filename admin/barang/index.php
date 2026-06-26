@@ -1,4 +1,9 @@
 <?php
+$authUser = $_SESSION['auth_user'] ?? [];
+$userName = $authUser['nama'] ?? 'Admin Gudang';
+$userEmail = $authUser['email'] ?? 'admin@gudangelektronik.id';
+$activeMenu = 'barang';
+
 $initialData = [
     ['id' => 'ELC-001', 'nama' => 'Monitor LED 24"', 'kategori' => 'Monitor', 'lokasi' => 'Rak A1', 'stok' => 28, 'tglMasuk' => '18 Mei 2024', 'tglKeluar' => null, 'status' => 'Aman', 'kondisi' => 'Baik'],
     ['id' => 'ELC-002', 'nama' => 'Keyboard Mechanical', 'kategori' => 'Peripheral', 'lokasi' => 'Rak B1', 'stok' => 15, 'tglMasuk' => '20 Mei 2024', 'tglKeluar' => null, 'status' => 'Menipis', 'kondisi' => 'Baik'],
@@ -15,20 +20,6 @@ $initialData = [
     ['id' => 'ELC-013', 'nama' => 'GPU RTX 3060', 'kategori' => 'Komponen', 'lokasi' => 'Rak C4', 'stok' => 3, 'tglMasuk' => '11 Mei 2024', 'tglKeluar' => null, 'status' => 'Menipis', 'kondisi' => 'Baru'],
     ['id' => 'ELC-014', 'nama' => 'HDD External 2TB', 'kategori' => 'Penyimpanan', 'lokasi' => 'Rak D3', 'stok' => 7, 'tglMasuk' => '10 Mei 2024', 'tglKeluar' => null, 'status' => 'Menipis', 'kondisi' => 'Baik'],
     ['id' => 'ELC-015', 'nama' => 'Cooling Pad Laptop', 'kategori' => 'Aksesoris', 'lokasi' => 'Rak E4', 'stok' => 25, 'tglMasuk' => '9 Mei 2024', 'tglKeluar' => null, 'status' => 'Aman', 'kondisi' => 'Baik'],
-];
-
-$navItems = [
-    ['label' => 'Dashboard', 
-    'icon' => 'ri-dashboard-line', 
-    'href' => '../dash'
-    ],
-    ['label' => 'Stok Barang', 'icon' => 'ri-box-3-line', 'active' => true],
-    ['label' => 'Kategori', 'icon' => 'ri-apps-2-line'],
-    ['label' => 'Supplier', 'icon' => 'ri-truck-line'],
-    ['label' => 'Barang Masuk', 'icon' => 'ri-login-box-line'],
-    ['label' => 'Barang Keluar', 'icon' => 'ri-logout-box-r-line'],
-    ['label' => 'Laporan', 'icon' => 'ri-file-list-3-line'],
-    ['label' => 'Pengaturan', 'icon' => 'ri-settings-3-line'],
 ];
 ?>
 <!DOCTYPE html>
@@ -50,34 +41,7 @@ $navItems = [
 </head>
 <body>
     <div class="inventory-shell">
-        <aside class="inventory-sidebar">
-            <div class="inventory-brand">
-                <div class="inventory-logo">
-                    <i class="ri-building-4-line"></i>
-                </div>
-                <div>
-                    <strong>Gudang Elektronik</strong>
-                    <span>Sistem Stok Gudang</span>
-                </div>
-            </div>
-
-            <nav class="inventory-nav" aria-label="Menu gudang">
-                <?php foreach ($navItems as $item) : ?>
-                    <button type="button" class="<?= !empty($item['active']) ? 'active' : ''; ?>">
-                        <i class="<?= htmlspecialchars($item['icon']); ?>"></i>
-                        <span><?= htmlspecialchars($item['label']); ?></span>
-                    </button>
-                <?php endforeach; ?>
-            </nav>
-
-            <div class="inventory-user">
-                <div class="inventory-avatar">AG</div>
-                <div>
-                    <strong>Admin Gudang</strong>
-                    <span>admin@gudangelektronik.id</span>
-                </div>
-            </div>
-        </aside>
+        <?php require __DIR__ . '/../../includes/sidebar.php'; ?>
 
         <main class="inventory-main">
             <header class="inventory-topbar">
@@ -92,8 +56,8 @@ $navItems = [
                         <span>2</span>
                     </button>
                     <div class="inventory-profile">
-                        <div class="inventory-avatar small">AG</div>
-                        <span>Admin Gudang</span>
+                        <div class="inventory-avatar small"><?= htmlspecialchars($userInitials ?? 'AG'); ?></div>
+                        <span><?= htmlspecialchars($userName); ?></span>
                     </div>
                 </div>
             </header>
