@@ -1,7 +1,7 @@
 <?php
 
 
-define('BASE_URL', '/project-uas');
+define('BASE_URL', '/STOK_BARANG');
 
 function url(string $path = ''): string
 {
