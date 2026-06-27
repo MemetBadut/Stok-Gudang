@@ -119,24 +119,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1>Masuk untuk kelola stok gudang.</h1>
                 <p>Pantau stok, transaksi barang masuk, barang keluar, dan laporan gudang dari satu dashboard.</p>
             </div>
-
-            <div class="login-summary-grid">
-                <article>
-                    <i class="ri-box-3-line"></i>
-                    <strong>512</strong>
-                    <span>Total Barang</span>
-                </article>
-                <article>
-                    <i class="ri-checkbox-circle-line"></i>
-                    <strong>312</strong>
-                    <span>Stok Aman</span>
-                </article>
-                <article>
-                    <i class="ri-error-warning-line"></i>
-                    <strong>18</strong>
-                    <span>Perlu Dicek</span>
-                </article>
-            </div>
         </section>
 
         <section class="login-panel" aria-label="Form login">
